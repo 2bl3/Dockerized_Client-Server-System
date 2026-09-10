@@ -23,4 +23,21 @@ def handle_request (conn, addr, request_id):
     data = conn.recv(4096)
     message = data.decode('utf-8')
 
-    
+    start_time = datetime.now()
+    print(f"Request {request_id} START")
+    print(f"Client: {addr[0]}")
+    print(f"Message: {message}")
+    print(f"Start: {start_time.strftime('%H:%M:%S')}")
+    print()
+
+    time.sleep(2) 
+
+    response = "Request Completed"
+    conn.sendall(response.encode())
+
+    end_time = datetime.now()
+    print(f"Request {request_id} END")
+    print(f"End: {end_time.strftime('%H:%M:%S')}")
+    print()
+
+    conn.close()
