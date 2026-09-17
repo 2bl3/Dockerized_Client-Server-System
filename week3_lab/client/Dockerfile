@@ -6,4 +6,4 @@ COPY client.py .
 
 EXPOSE 5000
 
-CMD ["python", "client.py"]
+CMD ["python", "-u", "client.py"]
