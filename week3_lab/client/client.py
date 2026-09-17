@@ -2,7 +2,7 @@ import socket # Provides networking tools for TCP communication
 import time # Provides tools for recording request and response times
 from datetime import datetime # Provide readable timestamps for logging
 
-SERVER_HOST = "week3-server" # The hostname of the server to connect to
+SERVER_HOST = "localhost" # The hostname of the server to connect to
 SERVER_PORT = 5000 # The port number to connect to on the server
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Create a TCP socket
