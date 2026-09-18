@@ -1,6 +1,7 @@
 import socket
 from datetime import datetime
 import time
+import threading
 
 HOST = "0.0.0.0"
 PORT = 5000
@@ -35,9 +36,15 @@ print(f"Server is listening on {HOST}:{PORT}")
 
 request_id = 0
 
+# Start the server loop to accept incoming conections
 while True:
     conn, addr = server_socket.accept()
     request_id += 1
-    handle_request(conn, addr, request_id)
 
+    # Create a new thread to handle the request
+    thread = threading.Thread(
+    target=handle_request, 
+    args=(conn, addr, request_id)
+    )
+    thread.start()
 
