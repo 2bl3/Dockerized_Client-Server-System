@@ -6,7 +6,7 @@ SERVER_HOST = "localhost" # The hostname of the server to connect to
 SERVER_PORT = 5000 # The port number to connect to on the server
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Create a TCP socket
-client.settimeout(5)
+client.settimeout(20)
 client.connect((SERVER_HOST, SERVER_PORT)) # Connect to the server
 
 print(f"Connected to server at {SERVER_HOST}:{SERVER_PORT}") # Print a message indicating successful connection
